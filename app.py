@@ -1,54 +1,13 @@
 from flask import Flask, render_template, url_for, redirect, flash
-from flask_sqlalchemy import SQLAlchemy
 from forms import AddBlackCard, AddWhiteCard
-import csv
-import os
+
+import blackcards, whitecards
 
 app = Flask(__name__)
 
+
 app.config.update(DEBUG=True)
 app.config['SECRET_KEY'] = '66ea3dab727dfa20322ca91c32854073'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
-
-db = SQLAlchemy(app)
-
-class BlackCards(db.Model):
-    id = db.Column(db.Integer, primary_key=True, nullable=False)
-    content = db.Column(db.Text(500), nullable=False)
-
-    def __repr__(self):
-        return f"BlackCard('{self.id}', '{self.content}')"
-
-class WhiteCards(db.Model):
-    id = db.Column(db.Integer, primary_key=True, nullable=False)
-    content = db.Column(db.Text(500), nullable=False)
-
-    def __repr__(self):
-        return f"WhiteCard('{self.id}', '{self.content}')"
-
-
-
-# open file for reading BLACK cards
-with open('data/CAH - Black Cards.csv') as csvDataFile:
-    # read file as csv file 
-    csvReader = csv.reader(csvDataFile)
-    # for every row, print the row
-    for row in csvReader:
-        bc = BlackCards(content = 'row')
-        db.session.add(bc)
-        db.session.commit()
-
-
-# open file for reading BLACK cards
-with open('data/CAH - White Cards.csv') as csvDataFile:
-    # read file as csv file 
-    csvReader = csv.reader(csvDataFile)
-    # for every row, print the row
-    for row in csvReader:
-        wc = WhiteCards(content = 'row')
-        db.session.add(wc)
-        db.session.commit()
-
 
 
 #landing page
@@ -71,10 +30,14 @@ def play():
 def black_cards():
     form = AddBlackCard()
     if form.validate_on_submit():
+        blackcards.add_card(form.card.data)
         flash(f'Black card added!', 'success')
         return redirect(url_for('black_cards'))
+    
+    cards = blackcards.read_all()
 
-    return render_template("black_cards.html", title="white cards", form=form)
+    print(black_cards)
+    return render_template("black_cards.html", title="white cards", form=form, black_cards=cards)
 
 
 #add white card
@@ -82,11 +45,15 @@ def black_cards():
 def white_cards():
     form = AddWhiteCard()
     if form.validate_on_submit():
+        whitecards.add_card(form.card.data)
         flash(f'White card added!', 'success')
         return redirect(url_for('white_cards'))
-    return render_template("white_cards.html", title="white cards", form=form)
+
+    cards = whitecards.read_all()
+    print(cards)
+
+    return render_template("white_cards.html", title="white cards", form=form, white_cards=cards)
 
 
 if __name__ == '__main__':
-    app.run(debug = True)
-    db.create_all()
+    app.run()

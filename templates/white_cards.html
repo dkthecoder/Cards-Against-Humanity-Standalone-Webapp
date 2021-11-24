@@ -46,7 +46,6 @@
         <table class="table table-light table-striped table-hover table-sm">
           <thead>
             <tr>
-              <th scope="col">Card Number</th>
               <th scope="col">Contents</th>
             </tr>
           </thead>
@@ -55,8 +54,7 @@
             
             {% for white_card in white_cards %}
             <tr>
-              <td>{{ white_card.card_number }}</td>
-              <td>{{ white_card.contents }}</td>
+              <td>{{ white_card[0] }}</td>
             </tr>
             {% endfor %}
 
