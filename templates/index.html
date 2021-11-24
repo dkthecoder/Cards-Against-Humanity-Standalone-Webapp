@@ -13,7 +13,28 @@
       <h1 class="display-6 font-weight-normal">The game that puts Humans to shame!</h1>
       <p class="lead font-weight-normal">An adult party game in which players complete fill-in-the-blank statements
         using words or phrases typically deemed offensive, risqué or politically incorrect printed on playing cards.</p>
-      <a class="btn btn-outline-secondary" href="#">Coming soon</a>
+
+        <div class="h-100 p-5 bg-dark border rounded-3 text-light">
+          <h6>Enter a name/word favourite combination of letters</h6>
+  
+          <form method="POST" , action="">
+            {{ form.hidden_tag()}}
+            <fieldset class="form-group">
+              <div class="form-group">
+                {{ form.word(class="form-control") }}
+              </div>
+            </fieldset>
+  
+            <div class="form-group pt-3">
+              {{ form.submit(class="btn btn-outline-light") }}
+            </div>
+  
+          </form>
+        </div>
+
+      
+        
+
     </div>
     <div class="product-device shadow-sm d-none d-md-block"></div>
     <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>

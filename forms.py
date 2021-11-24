@@ -9,3 +9,7 @@ class AddBlackCard(FlaskForm):
 class AddWhiteCard(FlaskForm):
     card_body = TextAreaField('Card Content', validators=[DataRequired()])
     submit = SubmitField('Add')
+
+class LetsPlay(FlaskForm):
+    word = StringField('Word', validators=[DataRequired()])
+    submit = SubmitField('Play')

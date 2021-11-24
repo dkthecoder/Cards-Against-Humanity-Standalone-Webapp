@@ -1,7 +1,9 @@
 from flask import Flask, render_template, url_for, redirect, flash
-from forms import AddBlackCard, AddWhiteCard
+from forms import AddBlackCard, AddWhiteCard, LetsPlay
 
-import blackcards, whitecards
+import blackcards, whitecards, magicmaker
+
+
 
 app = Flask(__name__)
 
@@ -13,7 +15,11 @@ app.config['SECRET_KEY'] = '66ea3dab727dfa20322ca91c32854073'
 #landing page
 @app.route("/", methods=['POST', 'GET'])
 def index():
-    return render_template("index.html", title="welcome")
+    form = LetsPlay()
+    #if form.validate_on_submit():
+
+
+    return render_template("index.html", title="welcome", form=form)
 
 #Rules
 @app.route("/rules", methods=['POST', 'GET'])
@@ -21,9 +27,16 @@ def rules():
     return render_template("rules.html", title="rules")
 
 #play
+#TAKES A INPUT
 @app.route("/play", methods=['POST', 'GET'])
 def play():
+    form = LetsPlay()
+    #if form.validate_on_submit():
+
     return render_template("play.html", title="play")
+
+
+
 
 #add black card
 @app.route("/black_cards", methods=['POST', 'GET'])
