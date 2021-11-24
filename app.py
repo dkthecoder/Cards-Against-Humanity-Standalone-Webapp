@@ -1,5 +1,7 @@
 from flask import Flask
 from flask import render_template, url_for, request, redirect, flash
+from sqlalchemy import Column, Integer, Float, Date
+from forms import AddBlackCard, AddWhiteCard
 import os
 import db
 
@@ -7,7 +9,7 @@ import db
 app = Flask(__name__)
 app.config.update(DEBUG=True)
 #app.config.update(DEBUG=True, WTF_CSRF_ENABLED=True)
-#app.config['SECRET_KEY'] = '44ea3dab727dfa24322ca91c30854073'
+app.config['SECRET_KEY'] = '66ea3dab727dfa20322ca91c32854073'
 
 #db.init_app(app)
 
@@ -27,15 +29,24 @@ def play():
     return render_template("play.html", title="play")
 
 #add black card
-@app.route("/add_black_card")
-def add_black_card():
-    return "<p>black card add</p>"
+@app.route("/black_cards", methods=['POST', 'GET'])
+def black_cards():
+    form = AddBlackCard()
+    if form.validate_on_submit():
+        flash(f'Black card added!', 'success')
+        return redirect(url_for('black_cards'))
+
+    return render_template("black_cards.html", title="white cards", form=form)
 
 
 #add white card
-@app.route("/add_white_card")
-def add_white_card():
-    return "<p>white card add</p>"
+@app.route("/white_cards", methods=['POST', 'GET'])
+def white_cards():
+    form = AddWhiteCard()
+    if form.validate_on_submit():
+        flash(f'White card added!', 'success')
+        return redirect(url_for('white_cards'))
+    return render_template("white_cards.html", title="white cards", form=form)
 
 
 if __name__ == '__main__':

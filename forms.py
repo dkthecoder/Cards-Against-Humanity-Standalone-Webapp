@@ -3,9 +3,9 @@ from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextA
 from wtforms.validators import DataRequired, Length, EqualTo, Email
 
 class AddBlackCard(FlaskForm):
-    list_item = TextAreaField('Item:', validators=[DataRequired()])
+    card_body = TextAreaField('Card Content', validators=[DataRequired()])
     submit = SubmitField('Add')
 
 class AddWhiteCard(FlaskForm):
-    list_item = TextAreaField('Item:', validators=[DataRequired()])
+    card_body = TextAreaField('Card Content', validators=[DataRequired()])
     submit = SubmitField('Add')
