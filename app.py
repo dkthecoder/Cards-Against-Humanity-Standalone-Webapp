@@ -33,7 +33,7 @@ def play():
     form = LetsPlay()
     #if form.validate_on_submit():
 
-    return render_template("play.html", title="play")
+    return render_template("play.html", title="play", form=form)
 
 
 

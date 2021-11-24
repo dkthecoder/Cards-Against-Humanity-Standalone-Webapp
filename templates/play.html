@@ -6,103 +6,60 @@
 
 <main>
 
-  <!-- wide center piece -->
-  <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 bg-light">
-
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="card text-white bg-dark mb-3">
-          <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          </div>
+  <div class="row p-4 p-md-5 mb-4 text-white bg-dark">
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <h2 class="mb-0 display-4 fst-italic">Black Card:</h2>
+          <h2 class="card-text mb-auto">Type a word in and shuffle the game:</h2>
         </div>
       </div>
+    </div>
 
 
-      <div class="col-sm-6">
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <h4 class="mb-0 fst-italic">Shuffle Game</h4>
+          <p class="card-text mb-auto">Type a word in and shuffle the game:</p>
 
-        <div class="card bg-white mb-3">
-          <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          </div>
+          <form method="POST" , action="">
+            {{ form.hidden_tag()}}
+            <fieldset class="form-group">
+              <div class="form-group">
+                {{ form.word(class="form-control") }}
+              </div>
+            </fieldset>
+
+            <div class="form-group pt-3">
+              {{ form.submit(class="btn btn-outline-light") }}
+              <a class="btn btn-outline-light" href="{{ url_for('rules') }}">Feeling Lucky Punk!</a>
+            </div>
+
+          </form>
         </div>
-
-
-        <div class="card bg-white mb-3">
-          <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          </div>
-        </div>
-
-
-        <div class="card bg-white mb-3">
-          <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          </div>
-        </div>
-
-
-        <div class="card bg-white mb-3">
-          <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          </div>
-        </div>
-
-
-        <div class="card bg-white mb-3">
-          <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          </div>
-        </div>
-
-
-        <div class="card bg-white mb-3">
-          <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          </div>
-        </div>
-
-        <div class="card bg-white mb-3">
-          <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          </div>
-        </div>
-
-
-        <div class="card bg-white mb-3">
-          <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          </div>
-        </div>
-
-
-        <div class="card bg-white mb-3">
-          <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          </div>
-        </div>
-
-
-        <div class="card bg-white mb-3">
-          <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          </div>
-        </div>
-
       </div>
     </div>
   </div>
+
+  <div class="row mb-2">
+
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <h3 class="mb-0 fst-italic">This is a wider card with supporting text below as a natural lead-in to additional content.</h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <h3 class="mb-0 fst-italic">This is a wider card with supporting text below as a natural lead-in to additional content.</h3>
+        </div>
+      </div>
+    </div>
+
   </div>
 
 </main>

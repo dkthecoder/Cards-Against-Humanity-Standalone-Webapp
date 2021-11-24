@@ -4,6 +4,9 @@ print("importing black cards")
 df = pd.read_csv (r'data\CAH - Black Cards.csv', header=None)
 print("importing black cards COMPLETE")
 
+#Return TRUE length of dataframe
+def length():
+    return len(df) - 1
 
 #read all
 def read_all():

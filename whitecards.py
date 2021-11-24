@@ -4,6 +4,9 @@ print("importing white cards")
 df = pd.read_csv (r'data\CAH - White Cards.csv', header=None)
 print("importing white card COMPLETE")
 
+#Return TRUE length of dataframe
+def length():
+    return len(df) - 1
 
 #read all
 def read_all():
