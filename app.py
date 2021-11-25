@@ -1,3 +1,4 @@
+
 from flask import Flask, render_template, url_for, redirect, flash
 from forms import AddBlackCard, AddWhiteCard, LetsPlay
 
@@ -94,6 +95,7 @@ def rules():
 def black_cards():
     form = AddBlackCard()
     if form.validate_on_submit():
+
         blackcards.add_card(form.card.data)
         flash(f'Black card added!', 'success')
         return redirect(url_for('black_cards'))
@@ -109,6 +111,7 @@ def black_cards():
 def white_cards():
     form = AddWhiteCard()
     if form.validate_on_submit():
+
         whitecards.add_card(form.card.data)
         flash(f'White card added!', 'success')
         return redirect(url_for('white_cards'))
