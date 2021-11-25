@@ -18,7 +18,7 @@ def retrieve_card(card_id):
 
 #delete card
 def delete_card(card_id):
-    df.drop(card_id, inplace=True)
+    df.drop(df.index[(df[0] == card_id)], axis=0)
 
 #add card
 def add_card(card):

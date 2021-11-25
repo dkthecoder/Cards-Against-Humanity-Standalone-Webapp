@@ -47,8 +47,7 @@ def play(given_word):
             wc_return.append(temp)
         return render_template("play.html", title="play", form=form, blackcard=bc_return, whitecards=wc_return)
 
-    else:
-        if form.validate_on_submit():
+    elif form.validate_on_submit():
             bc = magicmaker.rand_numbers_from_word(0, num_of_bc, 1, form.word.data)
             wc = magicmaker.rand_numbers_from_word(0, num_of_wc, 10, form.word.data)
 
@@ -62,7 +61,8 @@ def play(given_word):
                     temp.append(whitecards.retrieve_card(wc[counter]))
                     counter = counter + 1
                 wc_return.append(temp)
-        return render_template("play.html", title="play", form=form, blackcard=bc_return, whitecards=wc_return)
+    return render_template("play.html", title="play", form=form, blackcard=bc_return, whitecards=wc_return)
+
 
 
 #FUNCTION
