@@ -12,16 +12,11 @@ This repository is also part of the deliverables for the QA devops project 2. an
 
 
 # The App:  
-Upon navigating to the app the user is presented with the homepage:  
+Below are the screenshots of the apps main pages.
 
-![home]()  
-The nav bar provides links which allow users to add a question, view questions and take the quiz. To add a question, the user simply fills in the name of the question on the form:  
+![Index, Rules, Lets Pay](https://raw.githubusercontent.com/dkthecoder/Cards-Against-Humanity-Standalone-Webapp/main/figures/CAH%20index%20rules%20lets%20play.png)  
 
-![add question]()  
-The user is then redirected to a page which allows them to add up to four options for the question. The view questions page displays a list of the questions which have been added so far, which are hyperlinked to allow the user to view, update and delete the associated options:  
-
-![view questions]()  
-Users can also update and delete questions, the app is set up so that deleting a question also removes the associated options.  
+![Black/White Cards](https://raw.githubusercontent.com/dkthecoder/Cards-Against-Humanity-Standalone-Webapp/main/figures/CAH%20black%20white%20cards.png)  
 
 
 ## Known Issues:
