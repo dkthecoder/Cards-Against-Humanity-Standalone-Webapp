@@ -26,4 +26,5 @@ Below are the screenshots of the apps main pages.
 ## Future Work:
 * Custom error pages.
 * Design for mobile display (for mobile web-app deployment)
-* User accounts to retain custom accounts.
+* User accounts to retain custom cards.
+* Modals for confirmation prompts
